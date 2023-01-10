@@ -189,6 +189,9 @@ body{
   opacity: 1;
   scale: 1.05;
 }
+/*.card:hover #mediumContainer > .card__heading {*/
+/*  opacity: 0;*/
+/*}*/
 .card:hover #mediumContainer {
   transition-duration: .5s;
   opacity: 1;
@@ -200,7 +203,7 @@ body{
   scale: 1.05;
 }
 
-.card .main-coffee > div:hover {
+.main-coffee > div:hover {
   /*transition-duration: .5s;*/
   /*opacity: 1;*/
   scale: 1.15;
