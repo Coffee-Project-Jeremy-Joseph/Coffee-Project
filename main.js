@@ -47,7 +47,6 @@ let coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-// comment
 
 let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
@@ -57,15 +56,16 @@ let roastSelection = document.querySelector('#roast-selection');
 
 submitButton.addEventListener('click', updateCoffees);
 
-// let lightDiv = document.querySelector("#roastLightContainer");
-// let createLightDiv = lightDiv.createElement('div');
-// createLightDiv.setAttribute("id", "createLightDiv");
-// createLightBtn.appendChild("div");
-// lightDiv.appendChild(createLightDiv);
-// createLightDiv.innerHTML = "text";
-
-let body = document.querySelector("div.card__content");
+let body = document.querySelector("body");
 let lightContainer = document.createElement('div');
 lightContainer.setAttribute("id", "lightContainer");
 body.appendChild(lightContainer);
 lightContainer.innerHTML = "new text";
+
+console.log("text");
+
+// </div>
+// <div id="roastDarkContainer">
+// <button id="roastDark">Dark Roast</button>
+//
+// </div>
