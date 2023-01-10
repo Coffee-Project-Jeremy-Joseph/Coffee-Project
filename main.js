@@ -27,7 +27,7 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    // tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -56,7 +56,7 @@ let roastSelection = document.querySelector('#roast-selection');
 
 submitButton.addEventListener('click', updateCoffees);
 
-let body = document.querySelector("body");
+let body = document.querySelector("section");
 let lightContainer = document.createElement('div');
 lightContainer.setAttribute("id", "lightContainer");
 body.appendChild(lightContainer);
@@ -69,3 +69,5 @@ console.log("text");
 // <button id="roastDark">Dark Roast</button>
 //
 // </div>
+
+// comment
