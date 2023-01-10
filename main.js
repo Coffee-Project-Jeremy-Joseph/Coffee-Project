@@ -56,6 +56,8 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
+// comment
+
 let lightBtn = document.getElementById("roastLightContainer");
 lightBtn = document.createElement('div');
 lightBtn.appendChild("div");
