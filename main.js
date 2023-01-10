@@ -57,11 +57,12 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 let lightBtn = document.getElementById("roastLightContainer");
+lightBtn = document.createElement('div');
 lightBtn.appendChild("div");
 lightBtn.innerHTML = "text";
 
-// let body = document.querySelector("body");
-// let numContainer = document.createElement('div');
-// numContainer.setAttribute("id", "numContainer");
-// body.appendChild(numContainer);
-// numContainer.innerHTML = finalProduct(desiredLength/(blockLength + 1));
+let getLight = document.getElementById("roastLightContainer");
+let numContainer = document.createElement('div');
+numContainer.setAttribute("id", "numContainer");
+body.appendChild(numContainer);
+numContainer.innerHTML = finalProduct(desiredLength/(blockLength + 1));
