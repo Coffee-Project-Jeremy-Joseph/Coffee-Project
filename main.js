@@ -52,19 +52,19 @@ var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-tbody.innerHTML = renderCoffees(coffees);
+// tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-// comment
+// let lightDiv = document.querySelector("#roastLightContainer");
+// let createLightDiv = lightDiv.createElement('div');
+// createLightDiv.setAttribute("id", "createLightDiv");
+// createLightBtn.appendChild("div");
+// lightDiv.appendChild(createLightDiv);
+// createLightDiv.innerHTML = "text";
 
-let lightBtn = document.getElementById("roastLightContainer");
-lightBtn = document.createElement('div');
-lightBtn.appendChild("div");
-lightBtn.innerHTML = "text";
-
-let getLight = document.getElementById("roastLightContainer");
-let numContainer = document.createElement('div');
-numContainer.setAttribute("id", "numContainer");
-body.appendChild(numContainer);
-numContainer.innerHTML = finalProduct(desiredLength/(blockLength + 1));
+let body = document.querySelector("body");
+let lightContainer = document.createElement('div');
+lightContainer.setAttribute("id", "lightContainer");
+body.appendChild(lightContainer);
+lightContainer.innerHTML = "text";
