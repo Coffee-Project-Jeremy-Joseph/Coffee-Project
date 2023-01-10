@@ -1,10 +1,10 @@
-"use strict"
+"use strict";
 
 function renderCoffee(coffee) {
     let html = '<div class="main-coffee">';
-    html += '<div>' + coffee.id + '</div>';
+    // html += '<div>' + coffee.id + '</div>';
     html += '<div>' + coffee.name + '</div>';
-    html += '<div>' + coffee.roast + '</div>';
+    // html += '<div>' + coffee.roast + '</div>';
     html += '</div>';
 
     return html;
@@ -31,13 +31,18 @@ function updateCoffees(e) {
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-let coffees = [
+let lightCoffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
+];
+let medCoffees = [
     {id: 4, name: 'City', roast: 'medium'},
     {id: 5, name: 'American', roast: 'medium'},
     {id: 6, name: 'Breakfast', roast: 'medium'},
+
+];
+let darkCoffees = [
     {id: 7, name: 'High', roast: 'dark'},
     {id: 8, name: 'Continental', roast: 'dark'},
     {id: 9, name: 'New Orleans', roast: 'dark'},
@@ -56,13 +61,23 @@ let roastSelection = document.querySelector('#roast-selection');
 
 submitButton.addEventListener('click', updateCoffees);
 
-let body = document.querySelector("section");
+let lightCard = document.querySelector("#light-card");
 let lightContainer = document.createElement('div');
 lightContainer.setAttribute("id", "lightContainer");
-body.appendChild(lightContainer);
-lightContainer.innerHTML = "new text";
+lightCard.appendChild(lightContainer);
+lightContainer.innerHTML = renderCoffees(lightCoffees);
 
-console.log("text");
+let medCard = document.querySelector("#med-card");
+let mediumContainer = document.createElement('div');
+mediumContainer.setAttribute("id", "mediumContainer");
+medCard.appendChild(mediumContainer);
+mediumContainer.innerHTML = renderCoffees(medCoffees);
+
+let darkCard = document.querySelector("#dark-card");
+let darkContainer = document.createElement('div');
+darkContainer.setAttribute("id", "darkContainer");
+darkCard.appendChild(darkContainer);
+darkContainer.innerHTML = renderCoffees(darkCoffees);
 
 // </div>
 // <div id="roastDarkContainer">
