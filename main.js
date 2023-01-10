@@ -68,4 +68,4 @@ let body = document.querySelector("body");
 let lightContainer = document.createElement('div');
 lightContainer.setAttribute("id", "lightContainer");
 body.appendChild(lightContainer);
-lightContainer.innerHTML = "text";
+lightContainer.innerHTML = "new text";
