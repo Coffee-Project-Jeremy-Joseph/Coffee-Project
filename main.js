@@ -49,7 +49,7 @@ function searchCoffees(value) {
             filteredCoffees.push(coffees[i]);
         }
     }
-    content.innerHTML = renderCoffees(filteredCoffees);
+    content.innerHTML = renderCoffees(searchCoffeesBar);
 }
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -73,10 +73,10 @@ let submitButton2 = document.querySelector('#submit2');
 let roastSelection = document.querySelector('#roast-selection');
 let addRoastSelection = document.querySelector('#add-roast-selection');
 let addNewCoffee = document.querySelector('#enterNewCoffee');
-// let searchCoffeesBar = document.getElementById("#enterCoffee");
+let searchCoffeesBar = document.getElementById("#enterCoffee");
 
 content.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener('click', updateCoffees);
 submitButton2.addEventListener('click', addCoffees);
-// searchCoffeesBar.addEventListener('keydown', searchCoffees);
+submitButton.addEventListener('click', searchCoffees);
