@@ -1,10 +1,10 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    let html = '<div class="main-coffee">';
-    html += '<div>' + coffee.id + '</div>';
-    html += '<div>' + coffee.name + '</div>';
-    html += '<div>' + coffee.roast + '</div>';
+    let html = '<div class="coffee" id="' + coffee.id + '">';
+    // html += '<td>' + coffee.id + '</td>';
+    html += '<div class="coffeeName" id="' + coffee.name + '">' + coffee.name + '</div>';
+    html += '<div class="' + coffee.roast + '">' + coffee.roast + '</div>';
     html += '</div>';
 
     return html;
@@ -12,7 +12,7 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for(let i = 0; i <= coffees.length - 1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -27,7 +27,8 @@ function updateCoffees(e) {
             filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    content.innerHTML = renderCoffees(filteredCoffees);
+
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -48,24 +49,10 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-let tbody = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit');
+let content = document.querySelector('#coffees');
+let submitButton = document.querySelector('#submit1');
 let roastSelection = document.querySelector('#roast-selection');
 
-// tbody.innerHTML = renderCoffees(coffees);
+content.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
-
-let body = document.querySelector("body");
-let lightContainer = document.createElement('div');
-lightContainer.setAttribute("id", "lightContainer");
-body.appendChild(lightContainer);
-lightContainer.innerHTML = "new text";
-
-console.log("text");
-
-// </div>
-// <div id="roastDarkContainer">
-// <button id="roastDark">Dark Roast</button>
-//
-// </div>
