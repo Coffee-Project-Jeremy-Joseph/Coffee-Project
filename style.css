@@ -98,7 +98,7 @@ body{
   }
 }
 
-@media(min-width: 960px){
+@media(min-width: 960px)
   .card-grid{
     grid-template-columns: repeat(3, 1fr);
     display: flex;
