@@ -33,7 +33,6 @@ function updateCoffees(e) {
         }
     });
     content.innerHTML = renderCoffees(filteredCoffees);
-
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
