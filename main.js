@@ -1,5 +1,4 @@
 "use strict"
-
 function renderCoffee(coffee) {
     let html = '<div class="coffee col-12" id="' + coffee.id + '">';
     // html += '<td>' + coffee.id + '</td>';
@@ -12,7 +11,6 @@ function renderCoffee(coffee) {
 
     return html;
 }
-
 function renderCoffees(coffees) {
     let html = '';
     for(let i = 0; i <= coffees.length - 1; i++) {
@@ -34,7 +32,6 @@ function updateCoffees(e) {
     });
     content.innerHTML = renderCoffees(filteredCoffees);
 }
-
 function searchCoffees(value) {
     let filteredCoffees = [];
     for (let i = 0; i < coffees.length; i++) {
@@ -44,15 +41,14 @@ function searchCoffees(value) {
     }
     content.innerHTML = renderCoffees(filteredCoffees);
 }
-
 function addCoffees(value) {
     let newRoast = addRoastSelection.value;
-    let newName =
-    filteredCoffees.push(coffee);
+    let newName = addNewCoffee.value;
+    let newId = coffees.length + 1;
+    filteredCoffees.push({id: newId, name: newName, roast: newRoast});
+    // coffees.push({id: newId, name: newName, roast: newRoast});
     content.innerHTML = renderCoffees(filteredCoffees);
 }
-
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -69,12 +65,12 @@ let coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
 let content = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit1');
 let submitButton2 = document.querySelector('#submit2');
 let roastSelection = document.querySelector('#roast-selection');
 let addRoastSelection = document.querySelector('#add-roast-selection');
+let addNewCoffee = document.querySelector('#enterNewCoffee');
 
 content.innerHTML = renderCoffees(coffees);
 
