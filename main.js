@@ -35,6 +35,17 @@ function updateCoffees(e) {
     content.innerHTML = renderCoffees(filteredCoffees);
 }
 
+function searchCoffees(value) {
+    let filteredCoffees = [];
+    for (let i = 0; i < coffees.length; i++) {
+        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
+            filteredCoffees.push(coffees[i]);
+        }
+
+    }
+    content.innerHTML = renderCoffees(filteredCoffees);
+}
+
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
