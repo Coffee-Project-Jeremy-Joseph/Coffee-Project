@@ -32,15 +32,6 @@ function updateCoffees(e) {
     });
     content.innerHTML = renderCoffees(filteredCoffees);
 }
-function searchCoffees(value) {
-    let filteredCoffees = [];
-    for (let i = 0; i < coffees.length; i++) {
-        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
-            filteredCoffees.push(coffees[i]);
-        }
-    }
-    content.innerHTML = renderCoffees(filteredCoffees);
-}
 function addCoffees(value) {
     let filteredCoffees = coffees;
     let newRoast = addRoastSelection.value;
@@ -50,6 +41,15 @@ function addCoffees(value) {
     content.innerHTML = renderCoffees(filteredCoffees);
     // addRoastSelection.value = document.getElementById("add-roast-selection").value = "";
     addNewCoffee.value = document.getElementById('enterNewCoffee').value = "";
+}
+function searchCoffees(value) {
+    let filteredCoffees = [];
+    for (let i = 0; i < coffees.length; i++) {
+        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+            filteredCoffees.push(coffees[i]);
+        }
+    }
+    content.innerHTML = renderCoffees(filteredCoffees);
 }
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -73,8 +73,10 @@ let submitButton2 = document.querySelector('#submit2');
 let roastSelection = document.querySelector('#roast-selection');
 let addRoastSelection = document.querySelector('#add-roast-selection');
 let addNewCoffee = document.querySelector('#enterNewCoffee');
+// let searchCoffeesBar = document.getElementById("#enterCoffee");
 
 content.innerHTML = renderCoffees(coffees);
 
 roastSelection.addEventListener('click', updateCoffees);
 submitButton2.addEventListener('click', addCoffees);
+// searchCoffeesBar.addEventListener('keydown', searchCoffees);
