@@ -48,11 +48,8 @@ function addCoffees(value) {
     let newId = coffees.length + 1;
     coffees.push({id: newId, name: newName, roast: newRoast});
     content.innerHTML = renderCoffees(filteredCoffees);
-    addRoastSelection.value = "light";
+    // addRoastSelection.value = document.getElementById("add-roast-selection").value = "";
     addNewCoffee.value = document.getElementById('enterNewCoffee').value = "";
-    console.log(newId);
-    console.log(newRoast);
-    console.log(newName);
 }
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -79,5 +76,5 @@ let addNewCoffee = document.querySelector('#enterNewCoffee');
 
 content.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('click', updateCoffees);
 submitButton2.addEventListener('click', addCoffees);
