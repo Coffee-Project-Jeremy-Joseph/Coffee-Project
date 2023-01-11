@@ -41,6 +41,15 @@ function searchCoffees(value) {
         if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
             filteredCoffees.push(coffees[i]);
         }
+    }
+    content.innerHTML = renderCoffees(filteredCoffees);
+}
+
+function addCoffees(value) {
+    for (let i = 0; i < coffees.length; i++) {
+        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
+            filteredCoffees.push(coffees[i]);
+        }
 
     }
     content.innerHTML = renderCoffees(filteredCoffees);
