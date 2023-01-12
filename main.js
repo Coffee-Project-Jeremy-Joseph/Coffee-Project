@@ -1,6 +1,6 @@
 "use strict"
 function renderCoffee(coffee) {
-    let html = '<div class="col-12 col-lg-6 pe-0">';
+    let html = '<div class="col-5 offset-1 pe-0">';
     html += '<div class="coffee d-flex flex-row" id="' + coffee.id + '">';
     html += '<div class="coffeeName pe-3" id="' + coffee.name + '">' + coffee.name + '</div>';
     html += '<div class=" ' + coffee.roast + ' my-auto">' + coffee.roast + '</div>';

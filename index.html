@@ -16,7 +16,7 @@
     <h1>Coffee!</h1>
     <hr class="border border-3">
     <div class="row px-3">
-        <form class="col-6 px-0">
+        <form class="col-12 col-md-6 px-0">
             <label class="pb-2" for="roast-selection">Reset</label>
             <select id="roast-selection" onchange="renderCoffees()">
                 <option>select roast</option>
@@ -39,7 +39,7 @@
             <input class="form-control" id="enterNewCoffee"type="text" placeholder="enter coffee name here" aria-label="default input example">
             <button type="button" class="btn btn-primary w-100 mt-2" id="submit">Submit</button>
         </form>
-        <div class="col-6 px-0">
+        <div class="col-12 col-md-6 px-0">
             <div class="row mx-0 opacity-0" id="coffees"></div>
         </div>
     </div>
