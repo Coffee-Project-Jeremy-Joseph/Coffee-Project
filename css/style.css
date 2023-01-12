@@ -52,7 +52,7 @@ h1, h3, label {
 
 .kenburns {
   z-index: -10;
-  opacity: 75%;
+  opacity: 50%;
   position: absolute;
   top: -999px;
   bottom: -999px;
