@@ -2,6 +2,8 @@
 function renderCoffee(coffee) {
     let html = '<div class="coffee d-flex flex-row" id="' + coffee.id + '">';
     // html += '<div class="col-12 col-md-6">';
+    // <div className="col-6 px-0 opacity-0" id="coffees"></div>
+
     html += '<div class="coffeeName pe-3" id="' + coffee.name + '">' + coffee.name + '</div>';
     html += '<div class=" ' + coffee.roast + ' my-auto">' + coffee.roast + '</div>';
     // html += '</div>';
@@ -72,9 +74,7 @@ let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let addRoastSelection = document.querySelector('#add-roast-selection');
 let addNewCoffee = document.querySelector('#enterNewCoffee');
-// let searchCoffeesBar = document.querySelector("#enterCoffee");
 
 content.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', addCoffees);
-// searchCoffeesBar.addEventListener('keyup', searchCoffees);
