@@ -20,22 +20,22 @@
         <img src="img/farm.png" class="kenburns">
         <h1 class="page-header">Coffee!</h1>
         <!-- START CARDS -->
-        <section class="hero-section">
+        <section class="hero-section w-75 float-start">
             <div class="card-grid">
                 <a class="card" href="#">
-                    <div class="card__background" style="background-image: url(img/LightBeans.jpg)"></div>
+                    <div class="card__background rounded" style="background-image: url(img/LightBeans.jpg)"></div>
                     <div class="card__content" id="light-card">
-                        <h3 class="card__heading">Light Roast</h3>
+                        <h3 class="card__heading ">Light Roast</h3>
                     </div>
                 </a>
                 <a class="card" href="#">
-                    <div class="card__background" style="background-image: url(img/MeduimBeans.jpg)"></div>
+                    <div class="card__background rounded" style="background-image: url(img/MeduimBeans.jpg)"></div>
                     <div class="card__content" id="med-card">
-                        <h3 class="card__heading">Medium Roast</h3>
+                        <h3 class="card__heading text-center">Medium Roast</h3>
                     </div>
                 </a>
                 <a class="card" href="#">
-                    <div class="card__background" style="background-image: url(img/DarkBeans.jpg)"></div>
+                    <div class="card__background rounded" style="background-image: url(img/DarkBeans.jpg)"></div>
                     <div class="card__content" id="dark-card">
                         <h3 class="card__heading">Dark Roast</h3>
                     </div>
@@ -45,24 +45,12 @@
 <!-- END CARDS -->
         <div class="container-fluid mx-0">
             <div class="row bg-image">
-                <div class="col-5 px-0 opacity-0" id="coffees"></div>
-                <form class="col-5 offset-2 px-0 form-container">
-                    <label class="pb-2" for="roast-selection">Roast</label>
-                    <select id="roast-selection" onchange="renderCoffees()">
-                        <option value="" selected disabled hidden>Choose here</option>
-                        <option>all</option>
-                        <option>light</option>
-                        <option>medium</option>
-                        <option>dark</option>
-                    </select>
-                    <label class="py-2" for="roast-selection">Coffee Name</label>
-                    <input class="form-control" id="enterCoffee" type="text" placeholder="enter coffee name here"
-                           aria-label="default input example" onkeyup="searchCoffees(value)">
-<!--                    <button type="button" class="btn btn-primary w-100 mt-2" id="submit1">Submit</button>-->
-                    <hr>
+<!--                <div class="col-5 px-0 opacity-0" id="coffees"></div>-->
+                <form class="px-0 flex-center form-container">
                     <h3>Add A Coffee</h3>
                     <label class="pb-2" for="roast-selection">Roast</label>
                     <select id="add-roast-selection">
+                        <option value="" selected disabled hidden>Choose here</option>
                         <option>light</option>
                         <option>medium</option>
                         <option>dark</option>
@@ -72,6 +60,20 @@
                            aria-label="default input example">
                     <button type="button" class="btn btn-primary w-100 mt-2" id="submit2">Submit</button>
                 </form>
+<!--                    <label class="pb-2" for="roast-selection">Roast</label>-->
+<!--                    <select id="roast-selection" onchange="renderCoffees()">-->
+<!--                        <option value="" selected disabled hidden>Choose here</option>-->
+<!--                        <option>all</option>-->
+<!--                        <option>light</option>-->
+<!--                        <option>medium</option>-->
+<!--                        <option>dark</option>-->
+<!--                    </select>-->
+<!--                    <label class="py-2" for="roast-selection">Coffee Name</label>-->
+<!--                    <input class="form-control" id="enterCoffee" type="text" placeholder="enter coffee name here"-->
+<!--                           aria-label="default input example" onkeyup="searchCoffees(value)">-->
+<!--&lt;!&ndash;                    <button type="button" class="btn btn-primary w-100 mt-2" id="submit1">Submit</button>&ndash;&gt;-->
+<!--                    <hr>-->
+
             </div>
         </div>
     </div>
