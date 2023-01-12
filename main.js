@@ -1,11 +1,9 @@
 "use strict"
 function renderCoffee(coffee) {
-    let html = '<div class="coffee col-12" id="' + coffee.id + '">';
-    // html += '<td>' + coffee.id + '</td>';
-    html += '<div class="row">';
-    // let coffeeItem =
-    html += '<div class="coffeeName col-6" id="' + coffee.name + '">' + coffee.name + '</div>';
-    html += '<div class="col-6 ' + coffee.roast + '">' + coffee.roast + '</div>';
+    let html = '<div class="col-6 col-md-4 col-lg-5 offset-lg-1 pe-0">';
+    html += '<div class="coffee d-flex flex-row" id="' + coffee.id + '">';
+    html += '<div class="coffeeName pe-3" id="' + coffee.name + '">' + coffee.name + '</div>';
+    html += '<div class="' + coffee.roast + ' my-auto">' + coffee.roast + '</div>';
     html += '</div>';
     html += '</div>';
 
@@ -31,6 +29,8 @@ function updateCoffees(e) {
         }
     });
     content.innerHTML = renderCoffees(filteredCoffees);
+    let coffeesVis = document.getElementById("coffees");
+    coffeesVis.classList.remove("opacity-0");
 }
 function addCoffees(value) {
     let filteredCoffees = coffees;
@@ -45,11 +45,11 @@ function addCoffees(value) {
 function searchCoffees(value) {
     let filteredCoffees = [];
     for (let i = 0; i < coffees.length; i++) {
-        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
             filteredCoffees.push(coffees[i]);
         }
     }
-    content.innerHTML = renderCoffees(searchCoffeesBar);
+    content.innerHTML = renderCoffees(filteredCoffees);
 }
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -68,15 +68,11 @@ let coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 let content = document.querySelector('#coffees');
-let submitButton = document.querySelector('#submit1');
-let submitButton2 = document.querySelector('#submit2');
+let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 let addRoastSelection = document.querySelector('#add-roast-selection');
 let addNewCoffee = document.querySelector('#enterNewCoffee');
-let searchCoffeesBar = document.getElementById("#enterCoffee");
 
 content.innerHTML = renderCoffees(coffees);
-
-roastSelection.addEventListener('click', updateCoffees);
-submitButton2.addEventListener('click', addCoffees);
-submitButton.addEventListener('click', searchCoffees);
+roastSelection.addEventListener('change', updateCoffees);
+submitButton.addEventListener('click', addCoffees);
