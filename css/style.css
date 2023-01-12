@@ -2,11 +2,11 @@
     --background-dark: #2d3548;
     --text-light: rgba(255,255,255,0.6);
     --text-lighter: rgba(255,255,255,0.9);
-    --spacing-s: 8px;
-    --spacing-m: 16px;
-    --spacing-l: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 64px;
+    --spacing-s: .5rem;
+    --spacing-m: 1rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
     --width-container: 100%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Anton&family=Lato:wght@300&family=Montserrat:wght@400;600&family=Roboto&family=Source+Code+Pro&family=Work+Sans&display=swap');
@@ -71,11 +71,13 @@ h1, h3, label {
     box-shadow: 0 0 1em 1em var(--bgcolor);
     height: fit-content;
 }
+.text-center {
+    text-align: center;
+}
 
 /* START MENU CARDS*/
 .hero-section{
     align-items: flex-start;
-    background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
     display: flex;
     min-height: 100%;
     justify-content: center;
@@ -119,6 +121,7 @@ h1, h3, label {
 .card__background{
     background-size: cover;
     background-position: center;
+    border: darkkhaki 1px solid;
     border-radius: var(--spacing-l);
     bottom: 0;
     filter: brightness(0.75) saturate(1.2) contrast(0.85);
@@ -157,7 +160,8 @@ h1, h3, label {
 
 .card__heading{
     color: var(--text-lighter);
-    font-size: 3rem;
+    font-size: 2rem;
+    text-align: center;
     text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
     line-height: 1.4;
     word-spacing: 100vw;
@@ -182,7 +186,7 @@ h1, h3, label {
 }
 
 .kenburns {
-    opacity: 85%;
+    /*opacity: 85%;*/
     position: absolute;
     top: -999px;
     bottom: -999px;
