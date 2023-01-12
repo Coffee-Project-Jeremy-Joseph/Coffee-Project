@@ -1,23 +1,22 @@
 "use strict"
-
 function renderCoffee(coffee) {
-    let html = '<div class="main-coffee">';
-    html += '<div>' + coffee.id + '</div>';
-    html += '<div>' + coffee.name + '</div>';
-    html += '<div>' + coffee.roast + '</div>';
+    let html = '<div class="coffee col-12" id="' + coffee.id + '">';
+    html += '<div class="row">';
+    // let coffeeItem =
+    html += '<div class="coffeeName col-6" id="' + coffee.name + '">' + coffee.name + '</div>';
+    html += '<div class="col-6 ' + coffee.roast + '">' + coffee.roast + '</div>';
+    html += '</div>';
     html += '</div>';
 
     return html;
 }
-
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for(let i = 0; i <= coffees.length - 1; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
-
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
@@ -26,11 +25,35 @@ function updateCoffees(e) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
         }
+        if ("all" === selectedRoast) {
+            filteredCoffees.push(coffee);
+        }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    content.innerHTML = renderCoffees(filteredCoffees);
+    let coffeesVis = document.getElementById("coffees");
+    coffeesVis.classList.remove("opacity-0");
 }
-
-// from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+function addCoffees(value) {
+    let filteredCoffees = coffees;
+    let newRoast = addRoastSelection.value;
+    let newName = addNewCoffee.value;
+    let newId = coffees.length + 1;
+    coffees.push({id: newId, name: newName, roast: newRoast});
+    content.innerHTML = renderCoffees(filteredCoffees);
+    // addRoastSelection.value = document.getElementById("add-roast-selection").value = "";
+    addNewCoffee.value = document.getElementById('enterNewCoffee').value = "";
+}
+function searchCoffees(value) {
+    let filteredCoffees = [];
+    for (let i = 0; i < coffees.length; i++) {
+        if(coffees[i].name.toLowerCase().indexOf(value.toLowerCase()) >  -1) {
+            filteredCoffees.push(coffees[i]);
+        }
+    }
+    content.innerHTML = renderCoffees(filteredCoffees);
+    let coffeesVis = document.getElementById("coffees");
+    coffeesVis.classList.remove("opacity-0");
+}
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
@@ -47,25 +70,14 @@ let coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-
-let tbody = document.querySelector('#coffees');
+let content = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
+let addRoastSelection = document.querySelector('#add-roast-selection');
+let addNewCoffee = document.querySelector('#enterNewCoffee');
+// let searchCoffeesBar = document.querySelector("#enterCoffee");
 
-// tbody.innerHTML = renderCoffees(coffees);
-
-submitButton.addEventListener('click', updateCoffees);
-
-let body = document.querySelector("body");
-let lightContainer = document.createElement('div');
-lightContainer.setAttribute("id", "lightContainer");
-body.appendChild(lightContainer);
-lightContainer.innerHTML = "new text";
-
-console.log("text");
-
-// </div>
-// <div id="roastDarkContainer">
-// <button id="roastDark">Dark Roast</button>
-//
-// </div>
+content.innerHTML = renderCoffees(coffees);
+roastSelection.addEventListener('change', updateCoffees);
+submitButton.addEventListener('click', addCoffees);
+// searchCoffeesBar.addEventListener('keyup', searchCoffees);
