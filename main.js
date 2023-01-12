@@ -76,3 +76,14 @@ let addNewCoffee = document.querySelector('#enterNewCoffee');
 content.innerHTML = renderCoffees(coffees);
 roastSelection.addEventListener('change', updateCoffees);
 submitButton.addEventListener('click', addCoffees);
+
+// presentation notes
+// pop-ups for no information entered
+// save results to local storage
+// icons
+// art work
+// button, dropdown, input styling
+// large layout center inputs
+// larger text for desktop
+// buttons should have a max width
+// need background filters behind text for legibility
